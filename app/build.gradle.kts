@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("com.google.devtools.ksp") version "2.2.21-2.0.4"
+    kotlin("kapt")
 }
 
 android {
@@ -62,6 +63,10 @@ dependencies {
     implementation("com.google.dagger:dagger-compiler:2.51.1")
     ksp("com.google.dagger:dagger-compiler:2.2.21-2.0.4")
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.google.dagger:dagger-compiler:2.51.1")
-    ksp("com.google.dagger:dagger-compiler:2.2.21-2.0.4")
+
+    implementation("androidx.room:room-runtime:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
+    kapt("androidx.room:room-compiler:2.6.0")
+    ksp("androidx.room:room-compiler:2.6.0")
+
 }
