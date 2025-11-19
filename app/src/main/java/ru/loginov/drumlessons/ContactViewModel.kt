@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
@@ -13,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class ComtactViewModel(
+class ContactViewModel(
     private val dao: ContactDAO
 ): ViewModel() {
 
@@ -48,7 +47,27 @@ class ComtactViewModel(
                 _state.update { it.copy(isAddingContact = false) }
             }
             ContactEvent.SaveContact -> {
+                val firstName = state.value.firstName
+                val lastName = state.value.lastName
+                val phoneNumber = state.value.phoneNumber
 
+                if (firstName.isBlank() || lastName.isBlank() || phoneNumber.isBlank()){
+                    return
+                }
+                val contact = Contact(
+                    firstName = firstName,
+                    lastName = lastName,
+                    phoneNumber = phoneNumber
+                )
+                viewModelScope.launch {
+                    dao.upsertContact(contact)
+                }
+                _state.update { it.copy(
+                    isAddingContact = false,
+                    firstName = "",
+                    lastName = "",
+                    phoneNumber = ""
+                ) }
             }
 
             is ContactEvent.SetFirstName -> {
@@ -80,4 +99,3 @@ class ComtactViewModel(
             }
         }
     }
-}
