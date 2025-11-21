@@ -40,8 +40,7 @@ fun BottomNavigate (
                     navController.navigate(item.route)
                 },
                 icon = {
-                    Icon(painter = painterResource(id = item.iconId), contentDescription = )
-                },
+                    Icon(painter = painterResource(id = item.iconId), contentDescription = "")               },
                 label = {
                     Text(
                         text = item.title,fontSize = 9.sp
