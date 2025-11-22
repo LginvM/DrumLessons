@@ -1,4 +1,4 @@
-package ru.loginov.drumlessons
+package ru.loginov.drumlessons.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

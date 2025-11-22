@@ -1,4 +1,4 @@
-package ru.loginov.drumlessons
+package ru.loginov.drumlessons.db
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

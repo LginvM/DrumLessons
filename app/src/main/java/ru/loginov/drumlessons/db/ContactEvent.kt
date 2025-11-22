@@ -1,4 +1,6 @@
-package ru.loginov.drumlessons
+package ru.loginov.drumlessons.db
+
+import ru.loginov.drumlessons.SortType
 
 sealed interface ContactEvent {
     object SaveContact: ContactEvent

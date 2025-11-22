@@ -1,4 +1,4 @@
-package ru.loginov.drumlessons
+package ru.loginov.drumlessons.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
