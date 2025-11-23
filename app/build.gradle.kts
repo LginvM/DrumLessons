@@ -67,6 +67,7 @@ dependencies {
 
     implementation("androidx.room:room-runtime:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
+    implementation("androidx.core:core-ktx:1.17.0")
     kapt("androidx.room:room-compiler:2.6.0")
     ksp("androidx.room:room-compiler:2.6.0")
 
