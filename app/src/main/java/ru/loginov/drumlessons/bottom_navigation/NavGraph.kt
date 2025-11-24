@@ -1,6 +1,7 @@
 package ru.loginov.drumlessons.bottom_navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -9,10 +10,18 @@ import androidx.navigation.compose.composable
 fun NavGraph(
     navHostController: NavHostController
 ) {
-    NavHost(navHostController = navHostController, startDestination = "Screen_1")
-    {
-        composable("Screen_1"){
+    NavHost(navController = navHostController, startDestination = "Screen_1"){
+        composable("screen_1") {
             Screen1()
+        }
+        composable("screen_2") {
+            Screen2()
+        }
+        composable("screen_3") {
+            Screen3()
+        }
+        composable("screen_4") {
+            Screen4()
         }
     }
 }

@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.devtools.ksp") version "2.2.21-2.0.4"
+//    id("com.google.devtools.ksp") version "2.2.21-2.0.4"
     kotlin("kapt")
 }
 
@@ -62,17 +62,17 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation("com.google.dagger:dagger-compiler:2.51.1")
-    ksp("com.google.dagger:dagger-compiler:2.2.21-2.0.4")
+//    ksp("com.google.dagger:dagger-compiler:2.2.21-2.0.4")
     implementation(kotlin("stdlib-jdk8"))
 
     implementation("androidx.room:room-runtime:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
     implementation("androidx.core:core-ktx:1.17.0")
     kapt("androidx.room:room-compiler:2.6.0")
-    ksp("androidx.room:room-compiler:2.6.0")
+//    ksp("androidx.room:room-compiler:2.6.0")
 
     //BotNav
-    implementation("androidx.navigation:navigation-compose:2.9.6")
-    implementation("androidx.compose.material:material:1.9.4")
+    implementation("androidx.navigation:navigation-compose:2.6.0")
+//    implementation("androidx.compose.material:material:1.9.4")
     implementation("androidx.compose.material3:material3:1.4.0")
 }
